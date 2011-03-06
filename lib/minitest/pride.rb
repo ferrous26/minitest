@@ -12,14 +12,14 @@ class PrideIO
 
   def initialize io
     @io = io
-    @colors = COLORS.cycle
-    @chars  = CHARS.cycle
+    @colors = COLORS
+    @chars  = CHARS
   end
 
   def print o
     case o
     when "." then
-      io.print "\e[#{@colors.next}m#{@chars.next}\e[0m"
+      io.print "\e[#{@colors.sample}m#{@chars.sample}\e[0m"
     when "E", "F" then
       io.print "\e[41m\e[37m#{o}\e[0m"
     else
