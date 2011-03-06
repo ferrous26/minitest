@@ -1,8 +1,15 @@
+=== 2.1.1 / 2011-03-11
+
+* 1 minor enhancement:
+
+  * Restore original minitest/pride behaviour, but still MacRuby
+    compatible.
+
 === 2.1.0 / 2011-03-11
 
 * 1 minor enhancement:
 
-  * Alter minitest/pride to work on MacRuby
+  * Alter minitest/pride to work on MacRuby.
 
 === 2.0.2 / 2010-12-24
 
