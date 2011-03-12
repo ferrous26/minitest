@@ -1,3 +1,9 @@
+=== 2.1.2 / 2011-03-12
+
+* 1 minor enhancement
+
+  * Fix up documentation so people know what is going on with this gem.
+
 === 2.1.1 / 2011-03-11
 
 * 1 minor enhancement:

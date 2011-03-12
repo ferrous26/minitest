@@ -1,8 +1,11 @@
 = minitest/*
 
-* http://rubyforge.org/projects/bfts
+* http://github.com/ferrous26/minitest
 
 == DESCRIPTION:
+
+minitest-macruby-pride is a fork of minitest that alters the
+minitest/pride library so that it works on MacRuby. That is all.
 
 minitest provides a complete suite of testing facilities supporting
 TDD, BDD, mocking, and benchmarking.
@@ -188,7 +191,7 @@ the gem, but you'll need to activate the gem explicitly to use it:
   require 'rubygems'
   gem 'minitest' # ensures you're using the gem, and not the built in MT
   require 'minitest/autorun'
-  
+
   # ... usual testing stuffs ...
 
 == LICENSE:
