@@ -2,10 +2,10 @@
 
 * http://github.com/ferrous26/minitest
 
-== DESCRIPTION:
-
 minitest-macruby-pride is a fork of minitest that alters the
 minitest/pride library so that it works on MacRuby. That is all.
+
+== DESCRIPTION:
 
 minitest provides a complete suite of testing facilities supporting
 TDD, BDD, mocking, and benchmarking.
