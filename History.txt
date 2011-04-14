@@ -1,8 +1,13 @@
-=== 2.1.3 / 2011-04-14
+=== 2.2.0 / 2011-04-14
 
-* 2 minor enhancement
+* 1 minor enhancement:
 
   * Rebased onto minitest 2.1.0
+
+=== 2.1.3 / 2011-03-23
+
+* 1 minor enhancement
+
   * Update documentation so people know what is going on with this gem.
 
 * 2 bug fix
