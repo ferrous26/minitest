@@ -5,6 +5,13 @@ $TESTING_MINIUNIT = true
 require 'rubygems'
 require 'hoe'
 
+require 'rake/compiletask'
+Rake::CompileTask.new do |t|
+	t.files = FileList['lib/**/*.rb']
+	t.verbose = true
+end
+
+
 Hoe.plugin :seattlerb
 
 Hoe.spec 'minitest-macruby-pride' do
