@@ -3,7 +3,8 @@
 * http://github.com/ferrous26/minitest
 
 minitest-macruby-pride is a fork of minitest that alters the
-minitest/pride library so that it works on MacRuby. That is all.
+minitest/pride library so that it works on MacRuby. It also includes
+other small changes to make things work on MacRuby.
 
 == DESCRIPTION:
 
