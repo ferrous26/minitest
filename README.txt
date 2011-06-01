@@ -1,6 +1,9 @@
 = minitest/*
 
-* http://rubyforge.org/projects/bfts
+* http://github.com/ferrous26/minitest
+
+minitest/pride library so that it works on MacRuby. It also includes
+other small changes to make things work on MacRuby.
 
 == DESCRIPTION:
 
@@ -240,7 +243,7 @@ the gem, but you'll need to activate the gem explicitly to use it:
   require 'rubygems'
   gem 'minitest' # ensures you're using the gem, and not the built in MT
   require 'minitest/autorun'
-  
+
   # ... usual testing stuffs ...
 
 == LICENSE:
