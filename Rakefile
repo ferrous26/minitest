@@ -7,8 +7,9 @@ require 'hoe'
 
 Hoe.plugin :seattlerb
 
-Hoe.spec 'minitest' do
+Hoe.spec 'minitest-macruby-pride' do
   developer 'Ryan Davis', 'ryand-ruby@zenspider.com'
+  developer 'Mark Rada', 'mrada@marketcircle.com'
 
   self.rubyforge_name = "bfts"
   self.testlib = :minitest
@@ -38,6 +39,16 @@ task :dickwag do
     print " flog = "; system "flog -s lib/test"
   end
   puts
+end
+
+if Kernel.const_defined? :MACRUBY_REVISION
+  if MACRUBY_REVISION.match /^git commit/
+    require 'rake/compiletask'
+    Rake::CompileTask.new do |t|
+      t.files = FileList['lib/**/*.rb']
+      t.verbose = true
+    end
+  end
 end
 
 # vim: syntax=Ruby
