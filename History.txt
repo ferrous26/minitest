@@ -19,14 +19,14 @@
 
   * Got rid of the trailing period in message for assert_equal. (tenderlove)
   * Windows needs more flushing. (Akio Tajima)
+  * make minitest/pride work with MacRuby (MacRuby has no Fiber implementation)
+  * try to avoid calling #force_encoding on Strings that might be NSStrings
 
 === 2.2.1 / 2011-05-31
 
 * 1 bug fix:
 
   * My _ONE_ non-rubygems-using minitest user goes to Seattle.rb!
-  * make minitest/pride work with MacRuby (MacRuby has no Fiber implementation)
-  * try to avoid calling #force_encoding on Strings that might be NSStrings
 
 === 2.2.0 / 2011-05-29
 
