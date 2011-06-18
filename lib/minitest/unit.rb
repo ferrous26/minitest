@@ -146,7 +146,7 @@ module MiniTest
 
     def mu_pp obj
       s = obj.inspect
-      s = s.force_encoding Encoding.default_external if s.encoding != Encoding.default_external
+      s = s.encode Encoding.default_external if s.encoding != Encoding.default_external
       s
     end
 
