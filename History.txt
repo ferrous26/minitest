@@ -7,6 +7,7 @@
   * Allow for less specific expected arguments in Mock. (bhenderson/phiggins)
   * Made MiniTest::Mock a blank slate. (phiggins)
   * Refactored minitest/spec to use the hooks instead of define_inheritable_method. (phiggins)
+  * Assertions#mu_pp should be safe in all cases now since we call String#encode
 
 * 2 bug fixes:
 
