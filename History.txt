@@ -1,8 +1,9 @@
 === 2.3.1 / 2011-06-22
 
-* 1 bug fix:
+* 2 bug fix:
 
   * Fixed minitest hoe plugin to be a spermy dep and not depend on itself.
+  * Make minitest/pride work with MacRuby
 
 === 2.3.0 / 2011-06-15
 
