@@ -640,6 +640,12 @@ class TestMiniTestUnitTestCase < MiniTest::Unit::TestCase
     end
   end
 
+  def test_assert_raises_class
+    @tc.assert_raises StandardError do
+      raise AnError
+    end
+  end
+
   def test_assert_raises_triggered_different
     e = assert_raises MiniTest::Assertion do
       @tc.assert_raises RuntimeError do
@@ -703,26 +709,6 @@ FILE:LINE:in `test_assert_raises_triggered_different_msg'
     expected = "XXX\nMiniTest::Assertion expected but nothing was raised."
 
     assert_equal expected, e.message
-  end
-
-  def test_assert_raises_triggered_subclass
-    e = assert_raises MiniTest::Assertion do
-      @tc.assert_raises StandardError do
-        raise AnError
-      end
-    end
-
-    expected = "[StandardError] exception expected, not
-Class: <AnError>
-Message: <\"AnError\">
----Backtrace---
-FILE:LINE:in `test_assert_raises_triggered_subclass'
----------------"
-
-    actual = e.message.gsub(/^.+:\d+/, 'FILE:LINE')
-    actual.gsub!(/block \(\d+ levels\) in /, '') if RUBY_VERSION =~ /^1\.9/
-
-    assert_equal expected, actual
   end
 
   def test_assert_respond_to
