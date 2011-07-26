@@ -7,8 +7,9 @@ require 'hoe'
 
 Hoe.plugin :seattlerb
 
-Hoe.spec 'minitest' do
+Hoe.spec 'minitest-macruby-pride' do
   developer 'Ryan Davis', 'ryand-ruby@zenspider.com'
+  developer 'Mark Rada', 'mrada@marketcircle.com'
 
   self.rubyforge_name = "bfts"
   self.testlib = :minitest
