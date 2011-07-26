@@ -5,8 +5,9 @@ rdoc :: http://bfts.rubyforge.org/minitest
 
 == DESCRIPTION:
 
-minitest provides a complete suite of testing facilities supporting
-TDD, BDD, mocking, and benchmarking.
+minitest-macruby-pride provides a complete suite of testing facilities supporting
+TDD, BDD, mocking, and benchmarking, with a couple extra changes for
+MacRuby.
 
 minitest/unit is a small and incredibly fast unit testing framework.
 It provides a rich set of assertions to make your tests clean and
