@@ -158,6 +158,26 @@ class MiniTest::Unit
 
     ##
     # Runs the given +work+ and asserts that the times gathered fit to
+    # match a logarithmic curve within a given error +threshold+.
+    #
+    # Fit is calculated by #fit_logarithmic.
+    #
+    # Ranges are specified by ::bench_range.
+    #
+    # Eg:
+    #
+    #   def bench_algorithm
+    #     assert_performance_logarithmic 0.99 do |x|
+    #       @obj.algorithm
+    #     end
+    #   end
+
+    def assert_performance_logarithmic threshold = 0.99, &work
+      assert_performance validation_for_fit(:logarithmic, threshold), &work
+    end
+
+    ##
+    # Runs the given +work+ and asserts that the times gathered fit to
     # match a straight line within a given error +threshold+.
     #
     # Fit is calculated by #fit_linear.
@@ -274,6 +294,20 @@ class MiniTest::Unit
       return Math.exp(a), b, fit_error(xys) { |x| (Math.exp(a) * (x ** b)) }
     end
 
+    def fit_logarithmic xs, ys
+      n      = xs.size
+      xys    = xs.zip(ys)
+      sys    = sigma(ys)
+      slnx   = sigma(xs)  { |x   | Math.log(x)      }
+      sylnx  = sigma(xys) { |x, y| Math.log(x) * y  }
+      slnx2  = sigma(xs)  { |x   | Math.log(x) ** 2 }
+
+      b = (n * sylnx - sys * slnx) / (n * slnx2 - slnx ** 2)
+      a = (sys - b * slnx) / n
+
+      return a, b, fit_error(xys) { |x| a + b * Math.log(x) }
+    end
+
     ##
     # Enumerates over +enum+ mapping +block+ if given, returning the
     # sum of the result. Eg:
@@ -331,6 +365,12 @@ class MiniTest::Spec
   def self.bench_performance_linear name, threshold = 0.99, &work
     bench name do
       assert_performance_linear threshold, &work
+    end
+  end
+
+  def self.bench_performance_logarithmic name, threshold = 0.99, &work
+    bench name do
+      assert_performance_logarithmic threshold, &work
     end
   end
 
